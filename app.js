@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 	User.findById("5be5cfb260e25b422c5146cb")
 		.then(user => {
 			//We instantiated user to get access to the instence methods, sience what we get form findById is only user data but not methods
-			req.user = new User(user.name, user.email, user.cart, user._id);
+			req.user = new User(user.username, user.email, user.cart, user._id);
 			next();
 		})
 		.catch(err => console.log(err));
